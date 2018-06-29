@@ -19,7 +19,12 @@ export default new Router({
   mode: "history",
   routes: [{
       path: "/",
-      component: Home
+      components: {
+        default: Home,
+        'orderingRecord': OrderingRecord,
+        'delivery': Delivery,
+        'history': History,
+      }
     },
     {
       path: "/Login",
@@ -36,16 +41,16 @@ export default new Router({
     {
       path: "/Admin",
       component: Admin,
-      // 路由独享守卫
-      beforeEnter: (to, from, next) => {
-        // 用法与全局导航守卫相同
-        if (from.path != '/') {
-          alert('请登录');
-          next();
-        } else {
-          next();
-        }
-      }
+      // // 路由独享守卫
+      // beforeEnter: (to, from, next) => {
+      //   // 用法与全局导航守卫相同
+      //   if (from.path != '/') {
+      //     alert('请登录');
+      //     next();
+      //   } else {
+      //     next();
+      //   }
+      // }
     },
     {
       path: "/About",

@@ -21,6 +21,25 @@ import router from './router'
 //   }
 // );
 
+
+import * as firebase from "firebase";
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBj4XTfSMHp0WiNgiYYfiueginpLqNY9XI",
+  authDomain: "pizza-app-60a92.firebaseapp.com",
+  databaseURL: "https://pizza-app-60a92.firebaseio.com",
+  projectId: "pizza-app-60a92",
+  storageBucket: "pizza-app-60a92.appspot.com",
+  messagingSenderId: "692027966653"
+};
+firebase.initializeApp(config);
+
+// let dbUsers = firebase.database().ref().child('users');
+// dbUsers.on("value", snap => {
+//   console.log(snap.val());
+// });
+
 new Vue({
   el: '#app',
   router,
